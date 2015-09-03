@@ -7,13 +7,17 @@ Currency Class Requirements:
 * Should be created with an amount and a currency code
   - Currency Class initialized with two attributes: amount and currency_code
 * Should equal another Currency object with the same amount and currency code
-  - Created method within Currency Class to overwrite ==.
+  - Created method within Currency Class to overwrite "==".
 * Should NOT equal another Currency object with different amount or currency code
   - Same as above.
 * Should be able to be added to another Currency object with the same currency code
+  - Created method within Currency Class to overwrite "+".
 * Should be able to be subtracted by another Currency object with the same currency code
+  - Created method within Currency Class to overwrite "-".
 * Should raise a DifferentCurrencyCodeError when you try to add or subtract two Currency objects with different currency codes.
+  **STILL HAVE TO DO THIS ONE!**
 * Should be able to be multiplied by a Fixnum or Float and return a Currency object
+  - Created method within Currency Class to overwrite the multiplier.
 * Currency.new should be able to take one argument with a currency symbol embedded in it, like "$1.20" or "€ 7.00", and figure out the correct currency code. It can also take two arguments like before, one being the amount and the other being the currency code.
 
 CurrencyConverter Requirements:

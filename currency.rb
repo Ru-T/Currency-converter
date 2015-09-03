@@ -28,6 +28,14 @@ class Currency
     end
   end
 
+  def *(currency_one)
+    if @currency_code == currency_one.currency_code
+      @amount * currency_one.amount
+    else
+      puts "You cannot multiply two different currencies"
+    end
+  end
+
 end
 
 
