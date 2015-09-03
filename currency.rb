@@ -14,8 +14,6 @@ class Currency
     end
   end
 
-
-
   def ==(currency_one)
     @amount == currency_one.amount && @currency_code == currency_one.currency_code
   end
@@ -52,6 +50,11 @@ class Currency
 
 #the above allows two amounts of the same currency type to be multiplied
 
+end
+
+case
+when currency_code = $
+  currency_code = :USD
 end
 
 
