@@ -1,8 +1,8 @@
 # Currency Converter
 
-## This program stores and converts curriences. Have fun!
+## This program stores and converts currencies. Have fun!
 
-Currency Requirements: 
+Currency Requirements:
 
 * Should be created with an amount and a currency code
 * Should equal another Currency object with the same amount and currency code
