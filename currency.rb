@@ -12,13 +12,13 @@ class Currency
     @amount == currency_one.amount && @currency_code == currency_one.currency_code
   end
 
-
-
-
-
-#  def +(amount, amount)
-#  end
-
+  def +(currency_one)
+    if @currency_code == currency_one.currency_code
+      @amount + currency_one.amount
+    else
+      puts "You cannot add two different currencies"
+    end    
+  end
 
 end
 

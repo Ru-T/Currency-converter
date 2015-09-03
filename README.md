@@ -2,11 +2,14 @@
 
 ## This program stores and converts currencies. Have fun!
 
-Currency Requirements:
+Currency Class Requirements:
 
 * Should be created with an amount and a currency code
+  - Currency Class initialized with two attributes: amount and currency_code
 * Should equal another Currency object with the same amount and currency code
+  - Created method within Currency Class to overwrite ==.
 * Should NOT equal another Currency object with different amount or currency code
+  - Same as above.
 * Should be able to be added to another Currency object with the same currency code
 * Should be able to be subtracted by another Currency object with the same currency code
 * Should raise a DifferentCurrencyCodeError when you try to add or subtract two Currency objects with different currency codes.
