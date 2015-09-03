@@ -8,11 +8,11 @@ class Currency
     @currency_code = currency_code
   end
 
-  def symbol(currency)
-    if @currency_code == ""
-       @currency_code == @amount.str[1..-1]
-    end
-  end
+  #def symbol(currency)
+  #  if @currency_code == ""
+  #     @currency_code == @amount.str[1..-1]
+  #  end
+  #end
   #Currency.new should be able to take one argument with a currency symbol embedded in it,
   #like "$1.20" or "€ 7.00", and figure out the correct currency code. It can also take two
   #arguments like before, one being the amount and the other being the currency code.
@@ -27,7 +27,7 @@ class Currency
     if @currency_code == currency_one.currency_code
       @amount + currency_one.amount
     else
-      puts "You cannot add two different currencies"
+      raise UnknownCurrencyCodeError
     end
   end
 
@@ -37,7 +37,7 @@ class Currency
     if @currency_code == currency_one.currency_code
       @amount - currency_one.amount
     else
-      puts "You cannot subtract two different currencies"
+      raise UnknownCurrencyCodeError
     end
   end
 
@@ -47,7 +47,7 @@ class Currency
     if @currency_code == currency_one.currency_code
       @amount * currency_one.amount
     else
-      puts "You cannot multiply two different currencies"
+      raise UnknownCurrencyCodeError
     end
   end
 
