@@ -8,4 +8,4 @@ dollar2 = Currency.new(75, "USD")
 #print " "
 #puts dollar.currency_code
 
-puts dollar + dollar2
+puts dollar - dollar2
