@@ -11,15 +11,14 @@ class Currency
        @amount = amount.delete(" ") # delete all spaces
        @currency_code = @amount[0] #first character of amount assigned to currency_code
        @amount = @amount[1..-1].to_f #amount is now all but its first character
+       if @currency_code == "$"
+         @currency_code = :USD
+       end
+       # the above needs way more paramenters
     end
   end
 
-#money[0]=‘’ to delete the symbol.money.to_f
 
-#Renee's elegant solution below:
-  #def isolate_symbols (currency_1)
-  #   @isolate_symbols = currency_1.slice(0)
-  #end
 
   def ==(currency_one)
     @amount == currency_one.amount && @currency_code == currency_one.currency_code
