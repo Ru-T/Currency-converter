@@ -14,19 +14,14 @@ class Currency
        if @currency_code == "$"
          @currency_code = :USD
        end
-       # the above needs way more paramenters
+       # TO DO: the above needs way more paramenters
     end
   end
-
-
 
   def ==(currency_one)
     @amount == currency_one.amount && @currency_code == currency_one.currency_code
   end
 #the above states that any two currencies with equal amounts and currency types are equal
-
-# TO DO: Change the below to include the currency_code
-# Try to use currency.new inside these
 
   def +(currency_one)
     if @currency_code == currency_one.currency_code

@@ -5,17 +5,19 @@ class CurrencyConverter
   def initialize (currency_hash = {})
     @currency_hash = currency_hash
   end
+
+
+  def convert (currency, currency_code)
+    if currency.currency_code == currency_code
+      currency.amount
+    end
+  end
+
+
 end
 
-  #def convert (currency)
-  #  if @currency_code == amount.currency_code
-  #     @amount == amount.amount
-  #end
+#currency_converter.convert(Currency.new(1, :USD), :USD) == Currency.new(1, :USD))
 
-
-#Should be able to take a Currency object and a
-#requested currency code that is the same currency
-#code as the Currency object's and return a
-#Currency object equal to the one passed in
-#(that is, currency_converter.convert(Currency.
-#new(1, :USD), :USD) == Currency.new(1, :USD))
+#Should be able to take a Currency object and a requested currency code that is the
+#same currency code as the Currency object's and return a Currency object equal to the
+#one passed in
