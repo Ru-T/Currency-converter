@@ -2,6 +2,7 @@ require './currency'
 require './currency_converter'
 require './error'
 
+puts "The below verifies initialization of Currency class"
 dollar = Currency.new("$5.30", "")
 dollar2 = Currency.new(5, :USD)
 
@@ -10,7 +11,7 @@ puts dollar.currency_code
 puts dollar2.amount
 puts dollar2.currency_code
 
-# below puts new variable that is the addition, etc.
+puts "The below confirms all amounts calculating correctly and returning currencies"
 addition = dollar + dollar2
 subtraction = dollar - dollar2
 multiplication = dollar * dollar2
@@ -22,13 +23,13 @@ puts subtraction.currency_code
 puts multiplication.amount
 puts multiplication.currency_code
 
+puts "The below verifies initialization of the CurrencyConverter class"
 currency_hash = CurrencyConverter.new({USD: 1, EUR: 0.74})
 puts currency_hash.currency_hash
 
-
+puts "The below verifies converting within the same currency_code"
 currency_converter = CurrencyConverter.new({USD: 1})
 new_amount = currency_converter.convert(Currency.new(1, :USD), :USD)
 
 puts new_amount == Currency.new(1, :USD).amount
-
-#puts convert(6, "USD")
+#puts new_amount.amount

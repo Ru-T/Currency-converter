@@ -50,11 +50,3 @@ class Currency
   end
 #the above allows two amounts of the same currency type to be multiplied
 end
-
-#if currency_code == "$"
-#	currency_code == :USD
-#elsif currency_code == "€"
-#  :EUR
-#else
-#  currency_code
-#end

@@ -6,13 +6,13 @@ class CurrencyConverter
     @currency_hash = currency_hash
   end
 
-
   def convert (currency, currency_code)
     if currency.currency_code == currency_code
       currency.amount
+    #comment out everything but the if if this breaks!
+    #elsif currency.currency_code != currency_code
     end
   end
-
 
 end
 
