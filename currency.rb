@@ -25,9 +25,12 @@ class Currency
   end
 #the above states that any two currencies with equal amounts and currency types are equal
 
+# TO DO: Change the below to include the currency_code
+# Try to use currency.new inside these
+
   def +(currency_one)
     if @currency_code == currency_one.currency_code
-      @amount + currency_one.amount
+      Currency.new(@amount + currency_one.amount, @currency_code)
     else
       raise UnknownCurrencyCodeError
     end
@@ -36,7 +39,7 @@ class Currency
 
   def -(currency_one)
     if @currency_code == currency_one.currency_code
-      @amount - currency_one.amount
+      Currency.new(@amount - currency_one.amount, @currency_code)
     else
       raise UnknownCurrencyCodeError
     end
@@ -45,7 +48,7 @@ class Currency
 
   def *(currency_one)
     if @currency_code == currency_one.currency_code
-      @amount * currency_one.amount
+      Currency.new(@amount * currency_one.amount, @currency_code)
     else
       raise UnknownCurrencyCodeError
     end

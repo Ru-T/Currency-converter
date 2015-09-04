@@ -1,4 +1,4 @@
-class Currency_Converter
+class CurrencyConverter
 
   attr_accessor :currency_hash
 
@@ -6,7 +6,6 @@ class Currency_Converter
     @currency_hash = currency_hash
   end
 end
-
 
   #def convert (currency)
   #  if @currency_code == amount.currency_code
