@@ -32,4 +32,12 @@ currency_converter = CurrencyConverter.new({USD: 1})
 new_amount = currency_converter.convert(Currency.new(1, :USD), :USD)
 
 puts new_amount == Currency.new(1, :USD).amount
-#puts new_amount.amount
+
+puts "The below verifies converting from one currency to another"
+diff_currency_converter = CurrencyConverter.new({USD: 1, EUR: 0.74})
+original_currency = Currency.new(1, :USD)
+new_code = :EUR
+
+newest_amount = diff_currency_converter.convert(original_currency, new_code)
+
+puts newest_amount

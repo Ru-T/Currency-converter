@@ -15,6 +15,7 @@ class CurrencyConverter
       currency.amount * (@currency_hash[currency_code]/@currency_hash[currency.currency_code])
     else
     # put custom error in here
+    #TO DO: see if order should be modified here so first unknown currency code error is thrown
     raise UnknownCurrencyCodeError
     end
   end

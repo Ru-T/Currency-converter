@@ -13,6 +13,8 @@ class Currency
        @amount = @amount[1..-1].to_f #amount is now all but its first character
        if @currency_code == "$"
          @currency_code = :USD
+       elsif @currency_code == "€"
+         @currency_code = :EUR
        end
        # TO DO: the above needs way more paramenters
     end
