@@ -9,8 +9,7 @@ class Currency
        @currency_code = currency_code
     else
        @amount = amount.delete(" ") #delete all spaces
-       @currency_code = @amount[0] #find REGEX way to handle
-       #currency_code = @amount.gsub(/[^0-9]/, '')
+       @currency_code = @amount.gsub(/[0-9, .]/, '')
        @amount = @amount.gsub(/[^\d,\.]/, '').to_f
     end
   end
