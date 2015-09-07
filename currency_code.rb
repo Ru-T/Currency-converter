@@ -24,7 +24,7 @@ puts multiplication.amount
 puts multiplication.currency_code
 
 puts "The below verifies initialization of the CurrencyConverter class"
-currency_hash = CurrencyConverter.new({USD: 1, EUR: 0.74})
+currency_hash = CurrencyConverter.new({USD: 1, EUR: 0.89})
 puts currency_hash.currency_hash
 
 puts "The below verifies converting within the same currency_code"
@@ -34,10 +34,19 @@ new_amount = currency_converter.convert(Currency.new(1, :USD), :USD)
 puts new_amount == Currency.new(1, :USD).amount
 
 puts "The below verifies converting from one currency to another"
-diff_currency_converter = CurrencyConverter.new({USD: 1, EUR: 0.74})
-original_currency = Currency.new(1, :USD)
+diff_currency_converter = CurrencyConverter.new({USD: 1, EUR: 0.89})
+original_currency = Currency.new(12, :USD)
 new_code = :EUR
 
-newest_amount = diff_currency_converter.convert(original_currency, new_code)
+eur_amount = diff_currency_converter.convert(original_currency, new_code)
 
-puts newest_amount
+puts eur_amount
+
+puts "The below verifies converting from one currency to another when three are present"
+mult_currency_converter = CurrencyConverter.new({USD: 1, EUR: 0.89, JPY: 118.89})
+orig_currency = Currency.new(118, :JPY)
+curr_code = :EUR
+
+jpy_amount = mult_currency_converter.convert(orig_currency, curr_code)
+
+puts jpy_amount
