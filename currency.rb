@@ -15,8 +15,10 @@ class Currency
          @currency_code = :USD
        elsif @currency_code == "€"
          @currency_code = :EUR
+       elsif @currency_code == "¥"
+         @currency_code = :JAP
        end
-       # TO DO: the above needs way more paramenters
+       #the above could contain many more symbol conversion to codes
     end
   end
 

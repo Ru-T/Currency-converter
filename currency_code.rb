@@ -45,7 +45,7 @@ puts eur_amount
 puts "The below verifies converting from one currency to another when three are present"
 mult_currency_converter = CurrencyConverter.new({USD: 1, EUR: 0.89, JPY: 118.89})
 orig_currency = Currency.new(118, :JPY)
-curr_code = :CAN
+curr_code = :EUR
 
 jpy_amount = mult_currency_converter.convert(orig_currency, curr_code)
 
