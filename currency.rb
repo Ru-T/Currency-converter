@@ -3,43 +3,26 @@ class Currency
   attr_accessor :amount
   attr_accessor :currency_code
 
-#  def initialize(amount, currency_code = "")
-#    if currency_code != ""
-#       @amount = amount
-#       @currency_code = currency_code
-#    else
-#       @amount = amount.delete(" ") # delete all spaces
-#       @currency_code = @amount[0] #first character of amount assigned to currency_code
-#       @amount = @amount[1..-1].to_f #amount is now all but its first character
-#       if @currency_code == "$"
-#         @currency_code = :USD
-#       elsif @currency_code == "€"
-#         @currency_code = :EUR
-#       elsif @currency_code == "¥"
-#         @currency_code = :JAP
-#       end
-       #the above could contain many more symbol conversion to codes
-#    end
-#  end
-
   def initialize(amount, currency_code = "")
     if currency_code != ""
        @amount = amount
        @currency_code = currency_code
     else
-       @amount = amount.delete(" ") # delete all spaces
+       @amount = amount.delete(" ") #delete all spaces
+      #the below is NOT ideal. Find a better way to handle.
        @currency_code = @amount[0]
-       #@currency_code = @amount.gsub(/[^\d\.]/)
        @amount = @amount.gsub(/[^\d,\.]/, '').to_f
-        #TO DO: turn the below if/else into a hash
-       if @currency_code == "$"
-         @currency_code = :USD
-       elsif @currency_code == "€"
-         @currency_code = :EUR
-       elsif @currency_code == "¥"
-         @currency_code = :JAP
-       end
+    end
+  end
 
+  def symbol_check (currency_code)
+    if @currency_code == "$"
+      @currency_code = :USD
+    elsif @currency_code == "€"
+      @currency_code = :EUR
+    elsif @currency_code == "¥"
+      @currency_code = :JAP
+      #TO DO: turn the below if/else into a hash
     end
   end
 

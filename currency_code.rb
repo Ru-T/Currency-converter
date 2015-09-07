@@ -3,8 +3,11 @@ require './currency_converter'
 require './error'
 
 puts "The below verifies initialization of Currency class"
-dollar = Currency.new("$5.30", "") 
+dollar = Currency.new("$5.30", "")
 dollar2 = Currency.new(5, :USD)
+
+dollar.symbol_check("")
+dollar2.symbol_check(:USD)
 
 puts dollar.amount
 puts dollar.currency_code
