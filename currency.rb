@@ -10,6 +10,7 @@ class Currency
     else
        @amount = amount.delete(" ") #delete all spaces
        @currency_code = @amount[0] #find REGEX way to handle
+       #currency_code = @amount.gsub(/[^0-9]/, '')
        @amount = @amount.gsub(/[^\d,\.]/, '').to_f
     end
   end
@@ -28,7 +29,6 @@ class Currency
   def ==(currency_one)
     @amount == currency_one.amount && @currency_code == currency_one.currency_code
   end
-#the above states that any two currencies with equal amounts and currency types are equal
 
   def +(currency_one)
     if @currency_code == currency_one.currency_code
@@ -37,7 +37,6 @@ class Currency
       raise UnknownCurrencyCodeError
     end
   end
-#the above allows two amounts of the same currency type to be added together
 
   def -(currency_one)
     if @currency_code == currency_one.currency_code
@@ -46,7 +45,6 @@ class Currency
       raise UnknownCurrencyCodeError
     end
   end
-#the above allows two amounts of the same currency type to be subtracted
 
   def *(currency_one)
     if @currency_code == currency_one.currency_code
@@ -55,7 +53,6 @@ class Currency
       raise UnknownCurrencyCodeError
     end
   end
-#the above allows two amounts of the same currency type to be multiplied
 end
 
 #def symbol_check (symbol)
