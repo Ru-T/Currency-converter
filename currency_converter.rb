@@ -9,15 +9,21 @@ class CurrencyConverter
   def convert (currency, currency_code)
     if currency.currency_code == currency_code
       currency.amount
-    #comment out everything but the if if this breaks!
-    #elsif currency.currency_code != currency_code
+    #TO DO: comment out everything but the if if this breaks!
+    #TO DO: check if the above if statement is unnecessary
+    elsif currency.currency_code != currency_code
+      currency.amount * (@currency_hash[currency_code]/@currency_hash[currency.currency_code])
+    else
+    # put custom error in here
     end
   end
 
 end
 
-#currency_converter.convert(Currency.new(1, :USD), :USD) == Currency.new(1, :USD))
 
-#Should be able to take a Currency object and a requested currency code that is the
-#same currency code as the Currency object's and return a Currency object equal to the
-#one passed in
+# 1 USD = .84 EUR
+
+# 20 USD = .84(20) EUR
+
+# .84 EUR = 1 USD
+# 20 EUR = 20/.84 USD
