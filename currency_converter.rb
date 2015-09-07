@@ -7,11 +7,11 @@ class CurrencyConverter
   end
 
   def convert (currency, currency_code)
-     if @currency_hash.has_key?(currency_code)
+    if @currency_hash.has_key?(currency_code)
        currency.amount * (@currency_hash[currency_code]/@currency_hash[currency.currency_code])
-     else
+    else
          raise UnknownCurrencyCodeError
-     end
-   end
+    end
+  end
 
 end
