@@ -1,7 +1,8 @@
+require './error'
+
 class Currency
 
-  attr_accessor :amount
-  attr_accessor :currency_code
+  attr_reader :amount, :currency_code
 
   def initialize(amount, currency_code = "")
     if currency_code != ""
@@ -12,6 +13,8 @@ class Currency
        @currency_code = @amount.gsub(/[0-9, .]/, '')
        @amount = @amount.gsub(/[^\d,\.]/, '').to_f
     end
+    #@currency_code.symbol_check
+    #TO DO: integrate below symbol_check into initialize and pull it out of the external code
   end
 
   def symbol_check (currency_code)
@@ -21,7 +24,7 @@ class Currency
       @currency_code = :EUR
     elsif @currency_code == "¥"
       @currency_code = :JAP
-      #TO DO: turn the above if/else into a hash
+    #TO DO: turn the above if/else into a hash
     end
   end
 
